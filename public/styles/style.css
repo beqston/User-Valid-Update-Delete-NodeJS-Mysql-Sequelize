@@ -1,0 +1,126 @@
+div{
+    border: 2px solid blue;
+    margin: 18px;
+    padding: 20px;
+}
+
+
+body{
+    background-color: rgba(95, 158, 160, 0.823);
+    color: white;
+}
+#user{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+p{
+    color: red;
+}
+nav{
+    border: 1px solid sandybrown;
+    padding: 12px;
+    background-color: burlywood;
+}
+nav a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    border: 2px solid ghostwhite;
+    padding: 8px;
+    transition: 300ms linear;
+}
+
+nav a:hover{
+    color: chartreuse;
+}
+
+nav:has(a:hover) a:not(:hover){
+    color:red;
+}
+.edit-user{
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.338);
+    color: white;
+    width: 90%;
+    padding: 20px;
+    top: 20px;
+    right: 10px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+.edit-user form{
+    display: flex;
+    flex-direction: column;
+}
+.edit-user form input{
+    display: flex;
+    padding: 10px;
+    width: 400px;
+}
+.edit-user form button{
+    width: 80px;
+    background-color: aqua;
+    border-radius: 8px;
+    margin-top: 12px;
+    padding: 8px;
+    cursor: pointer;
+}
+.edit-delete{
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    border: none;
+    gap: 12px;;
+}
+
+.edit-delete button{
+    width: 80px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(190, 178, 110);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+.close{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    padding-left: 8px;
+    background-color: rgb(100, 100, 137);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 22px;
+    align-items: center;
+    background-color: rgba(250, 235, 215, 0.278);
+}
+#form input{
+    width: 200px;
+    padding: 8px;
+    margin: 4px;
+
+}
+#form button{
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 12px;
+    background-color: rgba(255, 105, 180, 0.833);
+    color: white;
+}
+
+div a{
+    text-decoration: none;
+    color: rgb(38, 34, 139);
+}

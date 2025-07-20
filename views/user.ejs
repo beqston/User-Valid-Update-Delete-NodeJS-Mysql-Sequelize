@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add-user">add user</a>
+        <a href="/user">user</a>
+    </nav>
+    <h1>User Page</h1>
+
+    <%if(data.length == 0){%>
+        <h2>User not found</h2>
+    <%}%>
+    <%data.forEach((user)=>{%>
+        <div>
+            <h2>name: <%=user.username%>
+            </h2>
+            <h3>email: <%=user.email%>
+            </h3>
+            <h4>age: <%=user.age%>
+            </h4>
+            <a href="/user/<%= user.username.toLowerCase() %>">View Details Here</a>
+            <div class="edit-delete">
+                <button class="edit">Edit</button>
+                <form action="/delete/<%=user.id%>" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="edit-user">
+            <button class="close">Close</button>
+            <form action="/update/<%=user.id%>" method="POST">
+                <input type="text" value="<%=user.username%>" name="username" placeholder="Username" />
+                <input type="email" name="email" value="<%=user.email%>" placeholder="Email" />
+                <input type="number" name="age" value="<%=user.age%>" placeholder="Age" />
+                <button class="btn" type="submit">Update User</button>
+            </form>
+        </div>
+    <%})%>
+
+<script>
+    // Get all edit buttons and their corresponding forms
+    const editButtons = document.querySelectorAll('.edit');
+    const closeButtons = document.querySelectorAll('.close');
+    const editForms = document.querySelectorAll('.edit-user');
+
+    // Loop through each button by index
+    editButtons.forEach((button, index) => {
+        button.addEventListener('click', (e) => {
+            editForms[index].style.display = 'block';
+        });
+    });
+
+    closeButtons.forEach((button, index) => {
+        button.addEventListener('click', (e) => {
+            editForms[index].style.display = 'none';
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

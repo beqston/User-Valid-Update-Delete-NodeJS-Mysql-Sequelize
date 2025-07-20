@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Views</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add-user">add user</a>
+        <a href="/user">user</a>
+    </nav>
+    <h1>User Views</h1>
+
+    <div>
+        <h2>username: <%=user.username%></h2>
+        <h3>email: <%=user.email%></h3>
+        <h4>age: <%=user.age%></h4>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add-user">add user</a>
+        <a href="/user">user</a>
+    </nav>
+    <h1>Main Page</h1>
+
+
+    <%if(data.length == 0){%>
+        <h2>User not found</h2>
+    <%}%>
+
+    <%data.forEach((user)=>{%>
+        <div>
+            <h2>name: <%=user.username%></h2>
+            <h3>email: <%=user.email%></h3>
+            <h4>age: <%=user.age%></h4>
+        </div>
+    <%})%>
+</body>
+</html>
