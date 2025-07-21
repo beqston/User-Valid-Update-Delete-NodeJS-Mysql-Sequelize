@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Page</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="shortcut icon" href="./icons/user-icon.png" type="image/*">
 </head>
 
 <body>
@@ -18,8 +19,8 @@
 
     <%if(data.length == 0){%>
         <h2>User not found</h2>
-    <%}%>
-    <div id="users-cnt">
+    <%}else {%>
+            <div id="users-cnt">
 
             <%data.forEach((user)=>{%>
         <div class="user-cnt">
@@ -50,6 +51,8 @@
     <%})%>
 
     </div>
+    <%}%>
+
 
 
 <script>
