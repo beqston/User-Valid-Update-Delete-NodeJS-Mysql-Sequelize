@@ -10,7 +10,11 @@ const User = sequelize.define('users', {
     },
     username:{
         type:DataTypes.STRING,
-        allowNull:false
+        allowNull:false,
+        get(){
+            const rawValue = this.getDataValue('username');
+            return rawValue ? rawValue.toLowerCase() : null;
+        }
     },
     email:{
         type:DataTypes.STRING,
