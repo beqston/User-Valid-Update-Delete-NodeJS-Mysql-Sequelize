@@ -155,7 +155,7 @@ router.get('/user/:username', (req, res)=> {
     const {username} = req.params;
     User.findOne({
         where:Sequelize.where(Sequelize.fn('lower', Sequelize.col('username')),
-    username.toLowerCase())
+        username.toLowerCase())
     })
     .then((row)=> {
         res.status(200);

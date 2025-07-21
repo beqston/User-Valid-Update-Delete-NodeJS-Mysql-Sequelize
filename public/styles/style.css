@@ -38,10 +38,17 @@ nav a:hover{
 nav:has(a:hover) a:not(:hover){
     color:red;
 }
+#users-cnt{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+#users-cnt .user-cnt{
+    border: 2px solid rgba(0, 255, 217, 0.897);
+}
 .edit-user{
     display: none;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.338);
+    background-color:rgba(0, 0, 0, 0.338);
     color: white;
     width: 90%;
     padding: 20px;
@@ -49,6 +56,7 @@ nav:has(a:hover) a:not(:hover){
     right: 10px;
     padding-top: 30px;
     padding-bottom: 40px;
+
 }
 .edit-user form{
     display: flex;
