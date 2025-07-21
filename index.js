@@ -16,7 +16,7 @@ app.use((req, res)=>{
     res.send('page not found bro')
 });
 
-sequelize.sync({force:true}).then((result)=>{
+sequelize.sync({alter:true}).then((result)=>{
     app.listen(4000, ()=>{
     console.log('server is runing on port 4000...')
 });

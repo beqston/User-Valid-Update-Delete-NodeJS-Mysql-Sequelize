@@ -90,7 +90,7 @@ router.post('/update/:id', (req, res) => {
             // Check if nothing has changed
             if (user.username === username && user.email === email && user.age === age) {
                 console.log('No update needed for user');
-                return res.status(304).redirect('/user');
+                return res.status(304).redirect('/users');
             }
 
             // Check for existing username or email in other users
@@ -106,7 +106,7 @@ router.post('/update/:id', (req, res) => {
             .then(duplicateUser => {
                 if (duplicateUser) {
                     console.log('Username or email already exists');
-                    return res.status(409).redirect('/user');
+                    return res.status(409).redirect('/users');
                 }
 
                 // Update user
@@ -117,7 +117,7 @@ router.post('/update/:id', (req, res) => {
                 return user.save()
                     .then(() => {
                         console.log('User updated successfully');
-                        return res.status(200).redirect('/user');
+                        return res.status(200).redirect('/users');
                     });
             });
         })
@@ -137,16 +137,16 @@ router.post('/delete/:id', (req, res)=>{
         return row.destroy();
     })
     .then(()=>{
-        res.status(204).redirect('/user')
+        res.status(204).redirect('/users')
     })
     .catch(err=>console.log(err))
 });
 
-router.get('/user', (req, res)=> {
+router.get('/users', (req, res)=> {
     User.findAll()
     .then((rows)=> {
         res.status(200);
-        res.render('user', {data:rows})
+        res.render('users', {data:rows})
     })
 });
 
